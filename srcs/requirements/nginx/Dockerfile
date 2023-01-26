@@ -1,17 +1,21 @@
 FROM debian:buster
 
-RUN apt-get -y update \
-	&& apt-get -y install nginx openssl \
+RUN apt-get update -y \
+	&& apt-get upgrade -y \
+	&& apt-get install nginx -y \
+	&& apt-get install vim -y \
+	&& apt-get install curl -y \
 	&& mkdir -p /etc/nginx/ssl \
-	&& openssl req -newkey rsa:4096 -x509 -sha256 -days 365 -nodes \
-		-out /etc/nginx/ssl/tbrebion.crt \
-		-keyout /etc/nginx/ssl/tbrebion.key \
-		-subj "/C=FR/L=Paris/O=42/CN=tbrebion.42.fr/UID=tbrebion"
+	&& apt-get install OpenSSL -y \
+	&& openssl req -x509 -nodes \
+	-out /etc/nginx/ssl/inception.crt \
+	-keyout /etc/nginx/ssl/inception.key \
+	-subj "/C=FR/ST=IDF/L=Paris/O=42/OU=42/CN=tbrebion.42.fr/UID=tbrebion" \
+	&& mkdir -p /var/run/nginx
 
-COPY ./conf/nginx.conf /etc/nginx/conf.d
+COPY conf/nginx.conf /etc/nginx/nginx.conf
 
-RUN mkdir -p /run/nginx
+RUN chmod 775 /var/www/html \
+	&& chown -R www-data:www-data /var/www/html
 
-EXPOSE 443
-
-CMD ["nginx", "-g", "daemon off;"]
+CMD [ "nginx", "-g", "daemon off;" ]
