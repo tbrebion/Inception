@@ -30,4 +30,4 @@ fclean:
 	sudo mkdir -p $(WP_VOLUME)
 	sudo mkdir -p $(DB_VOLUME)
 
-.PHONY: all re clean fclean start stop	
+.PHONY: all clean fclean	
