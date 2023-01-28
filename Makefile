@@ -9,15 +9,15 @@ DB_VOLUME	= $(VOLUME_PATH)/mariadb
 $(NAME):
 		mkdir -p $(WP_VOLUME)
 		mkdir -p $(DB_VOLUME)
-		sudo docker compose $(COMPOSE) build up --build -d
+		sudo docker compose -f $(COMPOSE) build up --build -d
 
 re: fclean all
 
 start: 
-	sudo docker compose $(COMPOSE) up
+	sudo docker compose -f $(COMPOSE) up
 
 stop:
-	sudo docker compose $(COMPOSE) down
+	sudo docker compose -f $(COMPOSE) down
 
 clean:
 	stop
