@@ -1,8 +1,9 @@
 FROM debian:buster
 
 RUN apt-get update -y \
-	&& apt-get upgrade -y \
-	&& apt-get install nginx -y \
+	&& apt-get upgrade -y
+
+RUN	apt-get install nginx -y \
 	&& apt-get install vim -y \
 	&& apt-get install curl -y \
 	&& mkdir -p /etc/nginx/ssl \
