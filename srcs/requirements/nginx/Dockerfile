@@ -8,7 +8,7 @@ RUN	apt-get install nginx -y
 RUN	apt-get install vim -y
 RUN	apt-get install curl -y
 RUN	mkdir -p /etc/nginx/ssl
-RUN	apt-get install OpenSSL -y
+RUN	apt-get install openssl -y
 RUN	openssl req -x509 -nodes \
 	-out /etc/nginx/ssl/inception.crt \
 	-keyout /etc/nginx/ssl/inception.key \
