@@ -31,3 +31,7 @@ COPY ./tools/auto_config.sh /tmp/auto_config.sh
 EXPOSE 9000
 
 ENTRYPOINT [ "bash", "/tmp/auto_config.sh" ]
+
+WORKDIR /var/www/html
+
+CMD [ "/usr/sbin/php-fpm7.3", "-F" ]
