@@ -6,7 +6,7 @@ then
 	echo "Wordpress is already installed"
 
 else
-	sleep 5
+	sleep 10
 	wp config create --allow-root \
 				--dbname=$SQL_DATABASE \
 				--dbuser=$SQL_USER \
@@ -37,5 +37,5 @@ else
 
 fi
 
-php-fpm7.3 -F
-# exec /usr/sbin/php-fpm7.3 -F
+# php-fpm7.3 -F
+exec /usr/sbin/php-fpm7.3 -F
