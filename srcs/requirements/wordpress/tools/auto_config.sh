@@ -37,4 +37,5 @@ else
 
 fi
 
-exec "/usr/sbin/php-fpm7.3 -F"
+php-fpm7.3 -F
+# exec /usr/sbin/php-fpm7.3 -F
