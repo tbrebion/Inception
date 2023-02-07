@@ -12,6 +12,8 @@ down:
 	docker compose -f ./srcs/docker-compose.yml down
 
 re:
+	mkdir -p $(WP_VOLUME)
+	mkdir -p $(DB_VOLUME)
 	docker compose -f ./srcs/docker-compose.yml up -d --build
 
 clean:
