@@ -32,3 +32,4 @@ EXPOSE 9000
 ENTRYPOINT [ "bash", "/tmp/auto_config.sh" ]
 
 
+
