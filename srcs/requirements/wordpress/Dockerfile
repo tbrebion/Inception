@@ -30,3 +30,4 @@ COPY ./tools/auto_config.sh /tmp/auto_config.sh
 EXPOSE 9000
 
 ENTRYPOINT [ "bash", "/tmp/auto_config.sh" ]
+
