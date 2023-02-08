@@ -3,7 +3,8 @@
 echo	"ICI0"
 mysql_install_db
 echo	"ICI1"
-service mysql start
+# service mysql start
+/usr/bin/mysqld_safe --datadir='/var/lib/mysql'
 echo	"ICI2"
 
 mysql -e "CREATE DATABASE IF NOT EXISTS \`${SQL_DATABASE}\`;"
@@ -16,4 +17,4 @@ mysqladmin -u root -p$SQL_ROOT_PASSWORD shutdown
 
 echo	"ICI3"
 
-exec mysqld_safe
+# exec mysqld_safe
