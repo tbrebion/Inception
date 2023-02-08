@@ -5,7 +5,7 @@ RUN apt-get update -y \
 	&& apt-get -y install wget
 
 RUN apt-get install -y php7.3
-RUN	apt-get install -y php-cli
+RUN	apt-get install -y php-cgi
 RUN	apt-get install -y php-mysql
 RUN	apt-get install -y php-fpm
 RUN	apt-get install -y mariadb-client
@@ -25,10 +25,8 @@ RUN wp core download --allow-root --locale=en_US --path=/var/www/wordpress
 
 COPY ./conf/www.conf /etc/php/7.3/fpm/pool.d/www.conf
 
-# COPY ./conf/wp-config.php /var/www/wordpress/wp-config.php
-
 COPY ./tools/auto_config.sh /tmp/auto_config.sh
 
-# EXPOSE 9000
+EXPOSE 9000
 
 ENTRYPOINT [ "bash", "/tmp/auto_config.sh" ]
