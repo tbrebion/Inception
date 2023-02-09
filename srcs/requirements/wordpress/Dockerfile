@@ -17,6 +17,8 @@ RUN	tar -xzf wordpress-6.0-fr_FR.tar.gz \
 RUN	rm wordpress-6.0-fr_FR.tar.gz \
 RUN	chown -R root:root /var/www/wordpress
 
+RUN mkdir -p /var/run/php/
+
 RUN wget https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar \
 	&& chmod +x wp-cli.phar \
 	&& mv wp-cli.phar /usr/local/bin/wp
