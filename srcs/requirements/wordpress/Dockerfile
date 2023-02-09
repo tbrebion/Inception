@@ -27,6 +27,8 @@ RUN wp core download --allow-root --locale=en_US --path=/var/www/wordpress
 
 COPY ./conf/www.conf /etc/php/7.3/fpm/pool.d/www.conf
 
+COPY ./conf/wp-config.php /var/www/wordpress/wp-config.php
+
 COPY ./tools/auto_config.sh /tmp/auto_config.sh
 
 EXPOSE 9000
