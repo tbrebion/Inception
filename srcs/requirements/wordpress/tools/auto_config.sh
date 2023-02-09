@@ -1,11 +1,11 @@
 #!/bin/bash
 
-# if [ -f "/var/www/wordpress/.is_wp_installed" ]
+if [ -f "/var/www/wordpress/.is_wp_installed" ]
 
-# then
-# 	echo "Wordpress is already installed"
+then
+	echo "Wordpress is already installed"
 
-# else
+else
 	sleep 10
 	echo "STEP CONFIG CREATE"
 	wp config create --allow-root \
@@ -37,7 +37,7 @@
 
 	touch /var/www/wordpress/.is_wp_installed
 
-# fi
+fi
 
-php-fpm7.3 -F
-# exec /usr/sbin/php-fpm7.3 -F
+# php-fpm7.3 -F
+exec /usr/sbin/php-fpm7.3 -F
