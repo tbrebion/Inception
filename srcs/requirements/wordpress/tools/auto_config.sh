@@ -5,7 +5,6 @@
 # then
 	# echo "Wordpress is already installed"
 
-exec /usr/sbin/php-fpm7.3 -F
 # else
 	sleep 10
 	echo "STEP CONFIG CREATE"
@@ -39,4 +38,5 @@ exec /usr/sbin/php-fpm7.3 -F
 	# touch /var/www/wordpress/.is_wp_installed
 
 # fi
+# exec /usr/sbin/php-fpm7.3 -F
 
