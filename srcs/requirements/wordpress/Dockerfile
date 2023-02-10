@@ -8,7 +8,7 @@ RUN apt-get install -y php7.3
 RUN	apt-get install -y php-cgi
 RUN	apt-get install -y php-mysql
 RUN	apt-get install -y php-fpm
-# RUN	apt-get install -y mariadb-client
+RUN	apt-get install -y mariadb-client
 
 RUN wget https://fr.wordpress.org/wordpress-6.0-fr_FR.tar.gz -P /var/www
 
