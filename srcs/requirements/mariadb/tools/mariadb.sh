@@ -11,4 +11,4 @@ mysql -e "FLUSH PRIVILEGES;"
 
 mysqladmin -uroot -p$"SQL_ROOT_PASSWORD" shutdown
 
-/usr/bin/mysql_secure_installation
+# /usr/bin/mysql_secure_installation

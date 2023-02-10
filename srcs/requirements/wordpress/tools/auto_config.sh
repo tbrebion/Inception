@@ -6,7 +6,7 @@
 	# echo "Wordpress is already installed"
 
 # else
-	sleep 10
+	sleep 25
 	echo "STEP CONFIG CREATE"
 	wp config create --allow-root \
 				--dbname=$SQL_DATABASE \
