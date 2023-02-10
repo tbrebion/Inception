@@ -29,11 +29,12 @@ COPY ./conf/www.conf /etc/php/7.3/fpm/pool.d/www.conf
 
 COPY ./tools/auto_config.sh /tmp/auto_config.sh
 
-
-ENTRYPOINT [ "bash", "/tmp/auto_config.sh" ]
+EXPOSE 9000
 
 WORKDIR /var/www/html/
 
-EXPOSE 9000
+ENTRYPOINT [ "bash", "/tmp/auto_config.sh" ]
 
-CMD ["/usr/sbin/php-fpm7.3", "-F"]
+
+
+# CMD ["/usr/sbin/php-fpm7.3", "-F"]

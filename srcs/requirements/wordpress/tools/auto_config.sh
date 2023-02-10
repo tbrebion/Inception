@@ -11,7 +11,7 @@
 	wp config create --allow-root \
 				--dbname=${SQL_DATABASE} \
 				--dbuser=${SQL_USER} \
-				--dbpass=${SQL_PASSWORD} \
+				--dbpass=${SQL_ROOT_PASSWORD} \
 				--dbhost=mariadb:3306 --path=/var/www/wordpress
 
 	echo "STEP CORE INSTALL"
@@ -38,5 +38,5 @@
 	# touch /var/www/wordpress/.is_wp_installed
 
 # fi
-# exec /usr/sbin/php-fpm7.3 -F
+exec /usr/sbin/php-fpm7.3 -F
 
