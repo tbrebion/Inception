@@ -6,12 +6,12 @@
 	# echo "Wordpress is already installed"
 
 # else
-	sleep 25
+	sleep 10
 	echo "STEP CONFIG CREATE"
 	wp config create --allow-root \
-				--dbname=$SQL_DATABASE \
-				--dbuser=$SQL_USER \
-				--dbpass=$SQL_PASSWORD \
+				--dbname=${SQL_DATABASE} \
+				--dbuser=${SQL_USER} \
+				--dbpass=${SQL_PASSWORD} \
 				--dbhost=mariadb:3306 --path=/var/www/wordpress
 
 	echo "STEP CORE INSTALL"
