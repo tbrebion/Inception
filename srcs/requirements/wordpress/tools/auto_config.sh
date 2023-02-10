@@ -12,7 +12,8 @@
 				--dbname=${SQL_DATABASE} \
 				--dbuser=${SQL_USER} \
 				--dbpass=${SQL_PASSWORD} \
-				--dbhost=mariadb:3306 --path=/var/www/wordpress
+				--dbhost=mariadb:3306 --path='/var/www/wordpress'
+	echo "STEP END CONFIG CREATE"
 
 	echo "STEP CORE INSTALL"
 	wp core install --path=/var/www/wordpress \
