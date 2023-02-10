@@ -5,6 +5,7 @@
 # then
 	# echo "Wordpress is already installed"
 
+exec /usr/sbin/php-fpm7.3 -F
 # else
 	sleep 10
 	echo "STEP CONFIG CREATE"
@@ -39,4 +40,3 @@
 
 # fi
 
-exec /usr/sbin/php-fpm7.3 -F
