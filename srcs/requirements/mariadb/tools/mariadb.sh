@@ -10,3 +10,5 @@ mysql -e "ALTER USER 'root'@'localhost' IDENTIFIED BY '${SQL_ROOT_PASSWORD}';"
 mysql -e "FLUSH PRIVILEGES;"
 
 mysqladmin -uroot -p$"SQL_ROOT_PASSWORD" shutdown
+
+exec mysqld
