@@ -2,7 +2,6 @@
 
 mysql_install_db
 /usr/bin/mysqld_safe --datadir='/var/lib/mysql'
-/usr/bin/mysql_secure_installation
 
 mysql -e "CREATE DATABASE IF NOT EXISTS \`${SQL_DATABASE}\`;"
 mysql -e "CREATE USER IF NOT EXISTS \`${SQL_USER}\`@'localhost' IDENTIFIED BY '${SQL_PASSWORD}';"
@@ -20,3 +19,4 @@ mysqladmin -uroot -p"$SQL_ROOT_PASSWORD" shutdown
 # mysql -e "FLUSH PRIVILEGES;"
 # mysqladmin -uroot -p$"SQL_ROOT_PASSWORD" shutdown
 
+# /usr/bin/mysql_secure_installation
