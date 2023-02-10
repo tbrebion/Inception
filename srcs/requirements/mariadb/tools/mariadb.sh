@@ -1,7 +1,5 @@
 #!/bin/bash
 
-mysql_install_db
-/usr/bin/mysqld_safe --datadir='/var/lib/mysql'
 
 	mysql -e "CREATE DATABASE IF NOT EXISTS \`${SQL_DATABASE}\`;"
 	mysql -e "CREATE USER IF NOT EXISTS \`${SQL_USER}\`@'localhost' IDENTIFIED BY '${SQL_PASSWORD}';"
@@ -10,6 +8,8 @@ mysql_install_db
 	mysql -u "$SQL_USER" -p"$SQL_ROOT_PASSWORD" -e "FLUSH PRIVILEGES;"
 	mysqladmin -uroot -p"$SQL_ROOT_PASSWORD" shutdown
 
+mysql_install_db
+/usr/bin/mysqld_safe --datadir='/var/lib/mysql'
 
 # mysql -h mariadb -u ${SQL_USER} -p${SQL_PASSWORD} -e
 # mysql -e "CREATE DATABASE IF NOT EXISTS \`${SQL_DATABASE}\`;"
