@@ -3,6 +3,8 @@
 mysql_install_db
 /usr/bin/mysqld_safe --datadir='/var/lib/mysql'
 
+echo "ICIIIIIIIIIIIIIIIIIIIIIIII"
+
 mysql -e "CREATE DATABASE IF NOT EXISTS \`${SQL_DATABASE}\`;"
 mysql -e "CREATE USER IF NOT EXISTS \`${SQL_USER}\`@'localhost' IDENTIFIED BY '${SQL_PASSWORD}';"
 mysql -e "GRANT ALL PRIVILEGES ON *.* TO \`${SQL_USER}\`@'%' IDENTIFIED BY '${SQL_PASSWORD}';"
