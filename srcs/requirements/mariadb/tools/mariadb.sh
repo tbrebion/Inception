@@ -2,7 +2,7 @@
 
 mysql_install_db
 
-/etc/init.d/mysql start
+# /etc/init.d/mysql start
 
 /usr/bin/mysqld_safe --datadir='/var/lib/mysql'
 
