@@ -1,6 +1,5 @@
 #!/bin/bash
 
-/etc/init.d/mysql start
 mysql_install_db
 /usr/bin/mysqld_safe --datadir='/var/lib/mysql'
 
