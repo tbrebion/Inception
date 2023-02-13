@@ -1,8 +1,8 @@
 #!/bin/bash
 
 mysql_install_db
-/usr/bin/mysqld_safe --datadir='/var/lib/mysql'
 /usr/bin/mysql_secure_installation
+/usr/bin/mysqld_safe --datadir='/var/lib/mysql'
 
 mysql -h mariadb -u ${SQL_USER} -p${SQL_PASSWORD} -e
 mysql -e "CREATE DATABASE IF NOT EXISTS \`${SQL_DATABASE}\`;"
