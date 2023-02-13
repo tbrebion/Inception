@@ -34,7 +34,3 @@ EXPOSE 9000
 WORKDIR /var/www/html/
 
 ENTRYPOINT [ "bash", "/tmp/auto_config.sh" ]
-
-
-
-# CMD ["/usr/sbin/php-fpm7.3", "-F"]
