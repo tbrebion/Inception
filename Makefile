@@ -17,11 +17,12 @@ re:
 	docker compose -f ./srcs/docker-compose.yml up -d --build
 
 clean:
-	down
+	docker compose -f ./srcs/docker-compose.yml down
 	sudo docker system prune -af
 
 fclean:
-	clean
+	docker compose -f ./srcs/docker-compose.yml down
+	sudo docker system prune -af
 	sudo rm -rf $(WP_VOLUME)
 	sudo rm -rf $(DB_VOLUME)
 	sudo mkdir -p $(WP_VOLUME)
