@@ -1,8 +1,11 @@
 #!/bin/bash
 
 mysql_install_db
-/usr/bin/mysqld_safe --datadir='/var/lib/mysql'
+
 /usr/bin/mysql_secure_installation
+
+/usr/bin/mysqld_safe --datadir='/var/lib/mysql'
+# /usr/bin/mysqld_safe
 
 
 mysql -e "CREATE DATABASE IF NOT EXISTS \`${SQL_DATABASE}\`;"
@@ -15,7 +18,7 @@ mysqladmin -uroot -p"$SQL_ROOT_PASSWORD" shutdown
 
 
 # while ! mysqladmin ping -hlocalhost --silent; do
-    # sleep 1
+#     sleep 1
 # done
 # sleep 15;
 
