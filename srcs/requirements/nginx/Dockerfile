@@ -17,7 +17,7 @@ RUN	openssl req -x509 -nodes \
 
 COPY conf/nginx.conf /etc/nginx/nginx.conf
 
-RUN chmod 775 /var/www/html \
+RUN chmod 777 /var/www/html \
 	&& chown -R www-data:www-data /var/www/html
 
 EXPOSE 443

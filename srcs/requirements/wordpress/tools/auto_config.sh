@@ -25,16 +25,15 @@ wp core install --path=/var/www/wordpress \
 			--skip-email \
 			--allow-root
 
-echo "Adding another user"
-echo "STEP USER CREATE"
-wp user create ${WP_USER} ${WP_EMAIL} \
-			--role=author \
-			--path=/var/www/wordpress \
-			--user_pass=${WP_PASS} \
-			--display_name=${WP_USER} \
-			--first_name=${WP_USER_FIRST_NAME} \
-			--last_name=${WP_USER_LAST_NAME} \
-			--allow-root
+# echo "STEP USER CREATE"
+# wp user create ${WP_USER} ${WP_EMAIL} \
+# 			--role=author \
+# 			--path=/var/www/wordpress \
+# 			--user_pass=${WP_PASS} \
+# 			--display_name=${WP_USER} \
+# 			--first_name=${WP_USER_FIRST_NAME} \
+# 			--last_name=${WP_USER_LAST_NAME} \
+# 			--allow-root
 
 	# touch /var/www/wordpress/.is_wp_installed
 
