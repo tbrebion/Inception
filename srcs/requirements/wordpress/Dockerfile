@@ -20,9 +20,9 @@ RUN	wget https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.ph
 	&& mv wp-cli.phar /usr/local/bin/wp \
 	&& wp core download --allow-root --locale=en_US --path=/var/www/wordpress 
 
-COPY /conf/www.conf /etc/php/7.3/fpm/pool.d/www.conf
-COPY /conf/wp-config.php /var/www/wordpress/wp-config.php
-COPY /conf/auto_config.sh /tmp/auto_config.sh
+COPY ./conf/www.conf /etc/php/7.3/fpm/pool.d/www.conf
+COPY ./conf/wp-config.php /var/www/wordpress/wp-config.php
+COPY ./tools/auto_config.sh /tmp/auto_config.sh
 
 EXPOSE 9000
 
