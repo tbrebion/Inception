@@ -4,6 +4,8 @@ mysql_install_db --user=mysql --datadir=/var/lib/mysql
 
 /usr/bin/mysql_secure_installation
 
+/usr/bin/mysqld_safe --datadir='/var/lib/mysql'
+
 while ! mysqladmin ping -hlocalhost --silent; do
     sleep 1
 done
@@ -15,7 +17,6 @@ mysql -e "ALTER USER 'root'@'localhost' IDENTIFIED BY '${SQL_ROOT_PASSWORD}';"
 mysql -u "$SQL_USER" -p"$SQL_ROOT_PASSWORD" -e "FLUSH PRIVILEGES;"
 mysqladmin -uroot -p"$SQL_ROOT_PASSWORD" shutdown
 
-/usr/bin/mysqld_safe --datadir='/var/lib/mysql'
 
 
 # mysql -h mariadb -u ${SQL_USER} -p${SQL_PASSWORD} -e
