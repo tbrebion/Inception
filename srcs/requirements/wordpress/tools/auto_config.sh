@@ -6,35 +6,35 @@
 	# echo "Wordpress is already installed"
 
 # else
-	sleep 10
-	echo "STEP CONFIG CREATE"
-	wp config create --allow-root \
-				--dbname=${SQL_DATABASE} \
-				--dbuser=${SQL_USER} \
-				--dbpass=${SQL_PASSWORD} \
-				--dbhost=mariadb:3306 --path='/var/www/wordpress'
-				
-	sleep 10
-	echo "STEP CORE INSTALL"
-	wp core install --path=/var/www/wordpress \
-				--url=https://${DOMAIN_NAME} \
-				--title=Inception \
-				--admin_user=${WP_ADMIN_USER} \
-				--admin_password=${WP_ADMIN_PASS} \
-				--admin_email=${WP_ADMIN_EMAIL} \
-				--skip-email \
-				--allow-root
+sleep 10
+echo "STEP CONFIG CREATE"
+wp config create --allow-root \
+			--dbname=${SQL_DATABASE} \
+			--dbuser=${SQL_USER} \
+			--dbpass=${SQL_PASSWORD} \
+			--dbhost=mariadb:3306 --path='/var/www/wordpress'
+			
+sleep 10
+echo "STEP CORE INSTALL"
+wp core install --path=/var/www/wordpress \
+			--url=https://${DOMAIN_NAME} \
+			--title=Inception \
+			--admin_user=${WP_ADMIN_USER} \
+			--admin_password=${WP_ADMIN_PASS} \
+			--admin_email=${WP_ADMIN_EMAIL} \
+			--skip-email \
+			--allow-root
 
-	echo "Adding another user"
-	echo "STEP USER CREATE"
-	wp user create ${WP_USER} ${WP_EMAIL} \
-				--role=author \
-				--path=/var/www/wordpress \
-				--user_pass=${WP_PASS} \
-				--display_name=${WP_USER} \
-				--first_name=${WP_USER_FIRST_NAME} \
-				--last_name=${WP_USER_LAST_NAME} \
-				--allow-root
+echo "Adding another user"
+echo "STEP USER CREATE"
+wp user create ${WP_USER} ${WP_EMAIL} \
+			--role=author \
+			--path=/var/www/wordpress \
+			--user_pass=${WP_PASS} \
+			--display_name=${WP_USER} \
+			--first_name=${WP_USER_FIRST_NAME} \
+			--last_name=${WP_USER_LAST_NAME} \
+			--allow-root
 
 	# touch /var/www/wordpress/.is_wp_installed
 
