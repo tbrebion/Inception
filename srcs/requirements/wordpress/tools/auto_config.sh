@@ -13,8 +13,8 @@
 				--dbuser=${SQL_USER} \
 				--dbpass=${SQL_PASSWORD} \
 				--dbhost=mariadb:3306 --path='/var/www/wordpress'
-	echo "STEP END CONFIG CREATE"
-
+				
+	sleep 10
 	echo "STEP CORE INSTALL"
 	wp core install --path=/var/www/wordpress \
 				--url=https://${DOMAIN_NAME} \
