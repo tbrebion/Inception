@@ -15,7 +15,7 @@ sleep 10
 # 			--dbhost=mariadb:3306 --path='/var/www/wordpress'
 			
 sleep 10
-echo "STEP CORE INSTALL"
+# echo "STEP CORE INSTALL"
 wp core install --path=/var/www/wordpress \
 			--url=https://${DOMAIN_NAME} \
 			--title="Inception" \
