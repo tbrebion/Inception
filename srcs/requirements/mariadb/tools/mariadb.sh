@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# mysql_install_db
+mysql_install_db
 
 /usr/bin/mysql_secure_installation
 
