@@ -1,12 +1,14 @@
 #!/bin/bash
 
 mysql_install_db
-# /usr/bin/mysqld_safe --datadir='/var/lib/mysql'
+/usr/bin/mysqld_safe --datadir='/var/lib/mysql'
 
 
-service mysql start;
-sleep 5
 /usr/bin/mysql_secure_installation
+
+while ! mysqladmin ping -hlocalhost --silent; do
+    sleep 1
+done
 
 mysql -e "CREATE DATABASE IF NOT EXISTS \`${SQL_DATABASE}\`;"
 mysql -e "CREATE USER IF NOT EXISTS \`${SQL_USER}\`@'localhost' IDENTIFIED BY '${SQL_PASSWORD}';"
