@@ -3,7 +3,7 @@
 mysql_install_db
 /usr/bin/mysqld_safe --datadir='/var/lib/mysql'
 
-# /usr/bin/mysql_secure_installation
+exec /usr/bin/mysql_secure_installation
 
 sleep 5
 
