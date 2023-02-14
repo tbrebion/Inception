@@ -17,7 +17,7 @@ mysql -e "ALTER USER 'root'@'localhost' IDENTIFIED BY '${SQL_ROOT_PASSWORD}';"
 mysql -u "$SQL_USER" -p"$SQL_ROOT_PASSWORD" -e "FLUSH PRIVILEGES;"
 mysqladmin -uroot -p"$SQL_ROOT_PASSWORD" shutdown
 
-	
+exec mysqld
 # mysql -h mariadb -u ${SQL_USER} -p${SQL_PASSWORD} -e
 # mysql -e "CREATE DATABASE IF NOT EXISTS \`${SQL_DATABASE}\`;"
 # mysql -e "CREATE USER IF NOT EXISTS \`${SQL_USER}\`@'localhost' IDENTIFIED BY '${SQL_PASSWORD}';"
