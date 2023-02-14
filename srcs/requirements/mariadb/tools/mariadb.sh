@@ -2,10 +2,10 @@
 
 mysql_install_db
 
-/usr/bin/mysql_secure_installation
 
 /usr/bin/mysqld_safe --datadir='/var/lib/mysql'
 # /usr/bin/mysqld_safe
+/usr/bin/mysql_secure_installation
 
 
 mysql -e "CREATE DATABASE IF NOT EXISTS \`${SQL_DATABASE}\`;"
