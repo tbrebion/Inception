@@ -7,18 +7,18 @@
 
 # else
 sleep 10
-echo "STEP CONFIG CREATE"
-wp config create --allow-root \
-			--dbname=${SQL_DATABASE} \
-			--dbuser=${SQL_USER} \
-			--dbpass=${SQL_PASSWORD} \
-			--dbhost=mariadb:3306 --path='/var/www/wordpress'
+# echo "STEP CONFIG CREATE"
+# wp config create --allow-root \
+# 			--dbname=${SQL_DATABASE} \
+# 			--dbuser=${SQL_USER} \
+# 			--dbpass=${SQL_PASSWORD} \
+# 			--dbhost=mariadb:3306 --path='/var/www/wordpress'
 			
 sleep 10
 echo "STEP CORE INSTALL"
 wp core install --path=/var/www/wordpress \
 			--url=https://${DOMAIN_NAME} \
-			--title=Inception \
+			--title="Inception" \
 			--admin_user=${WP_ADMIN_USER} \
 			--admin_password=${WP_ADMIN_PASS} \
 			--admin_email=${WP_ADMIN_EMAIL} \
