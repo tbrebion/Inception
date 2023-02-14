@@ -1,9 +1,11 @@
 #!/bin/bash
 
+
+/usr/bin/mysqld_safe --datadir='/var/lib/mysql'
+
 mysql_install_db
 
 /usr/bin/mysql_secure_installation
-
 
 while ! mysqladmin ping -hlocalhost --silent; do
     sleep 1
@@ -17,7 +19,6 @@ mysql -u "$SQL_USER" -p"$SQL_ROOT_PASSWORD" -e "FLUSH PRIVILEGES;"
 mysqladmin -uroot -p"$SQL_ROOT_PASSWORD" shutdown
 
 
-/usr/bin/mysqld_safe --datadir='/var/lib/mysql'
 
 # mysql -h mariadb -u ${SQL_USER} -p${SQL_PASSWORD} -e
 # mysql -e "CREATE DATABASE IF NOT EXISTS \`${SQL_DATABASE}\`;"
